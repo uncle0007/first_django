@@ -5,7 +5,10 @@ class User(models.Model):
     username = models.CharField(max_length=50)
     password = models.CharField(max_length=50)
 
-#admin.site.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('username','password')
+
+admin.site.register(User,UserAdmin)
 
 
 # Create your models here.
